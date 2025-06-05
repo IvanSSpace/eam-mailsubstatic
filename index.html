@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+  <body class="bg-cover">
+    <!-- <div class="bg-cover"> -->
+    <div class="content-overlay">
+      <div class="hero orbitron">
+        <h1 class="title">the Reliquary Project</h1>
+        <p class="description">Stay update with the latest news</p>
+      </div>
+      <div class="signup-container">
+        <div class="signup-input-container">
+          <input
+            required
+            type="email"
+            placeholder="Email Address"
+            class="signup-input"
+            autocomplete="email"
+          />
+        </div>
+        <button class="signup-button"><p class="signup-button-text">Signup</p></button>
+      </div>
+    </div>
+
+    <img src="/EAM.webp" alt="left-indicator" class="left-indicator" />
+    <img src="/www_01.webp" alt="right-indicator" class="right-indicator" />
+    <img src="/21_01.webp" alt="bottom-center-indicator" class="bottom-center-indicator" />
+    <!-- </div> -->
+  </body>
+
+  <style>
+    .bg-cover {
+      overflow: hidden;
+      font-family: "Orbitron", sans-serif;
+      position: relative;
+      background-size: cover;
+      background-position: center top;
+      background-repeat: no-repeat;
+      background-image: url("/shiana.webp");
+      min-height: 100vh;
+    }
+
+    /* hero hero hero hero hero hero hero hero hero hero hero hero hero hero hero hero hero hero hero  */
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .title {
+      color: #ffffff;
+      /* font-weight: bold; */
+      font-size: 72px;
+      margin-bottom: 0px;
+      @media (max-width: 1000px) {
+        font-size: 48px;
+      }
+    }
+
+    .description {
+      color: #ffffff;
+    }
+
+    /* форма авторизации форма авторизации форма авторизации форма авторизации форма авторизации  */
+
+    .signup-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      padding-top: 60px;
+    }
+
+    .signup-input-container {
+      transform: skew(45deg);
+      background: linear-gradient(to right, rgba(0, 215, 255, 0.7), rgba(0, 150, 194, 0.7));
+      /* box-shadow: inset 0 0 10px 0 rgba(0, 215, 255, 0.5); */
+      border-left: solid 7px rgba(0, 215, 255, 1);
+
+      transition: all 0.3s ease;
+
+      &:focus-within {
+        box-shadow: inset 0 0 10px 0 rgba(0, 215, 255, 0.5);
+        transition: all 0.3s ease;
+      }
+
+      .signup-input {
+        width: 500px;
+        height: 36px;
+        transform: skew(-45deg);
+        padding-left: 40px;
+        padding-right: 20px;
+        border: none;
+        outline: none;
+        color: #ffffff;
+        background: transparent;
+        caret-color: #FFFFFF;
+
+        @media (max-width: 1000px) {
+          width: 400px;
+        }
+        /* Кастомизация автозаполнения браузера */
+        &:-webkit-autofill,
+        &:-webkit-autofill:hover,
+        &:-webkit-autofill:focus,
+        &:-webkit-autofill:active {
+          -webkit-box-shadow: 0 0 0 30px transparent inset !important;
+          -webkit-text-fill-color: #ffffff !important;
+          background-color: transparent !important;
+          background-image: none !important;
+          transition: background-color 5000s ease-in-out 0s;
+        }
+
+        /* Для Firefox */
+        &:-moz-autofill {
+          background-color: transparent !important;
+          color: #ffffff !important;
+        }
+
+        /* Стили для placeholder */
+        &::placeholder {
+          color: rgba(255, 255, 255, 0.7);
+        }
+      }
+    }
+
+    .signup-button {
+      border: none;
+      transform: skew(45deg);
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 220px;
+      height: 36px;
+      background: linear-gradient(to right, rgba(0, 215, 255, 0.7), rgba(0, 150, 194, 0.7));
+      color: #ffffff;
+      &:hover {
+        background: linear-gradient(to right, rgba(0, 215, 255, 0.8), rgba(0, 150, 194, 0.8));
+
+        &:after {
+          /* box-shadow: inset 0 0 0 5px rgba(0, 255, 0, 0.5); */
+          top: 0;
+          right: 0;
+        }
+      }
+      .signup-button-text {
+        font-family: "Orbitron", sans-serif;
+        transform: skew(-45deg);
+      }
+
+      &:after {
+        pointer-events: none;
+        content: "";
+        position: absolute;
+        top: 5px;
+        right: -5px;
+        width: 100%;
+        height: 100%;
+        box-shadow: inset 0 0 0 1px #00d7ff;
+        transition: all 0.3s ease;
+      }
+    }
+
+    /* ниже все абсолютное позиционирование ниже все абсолютное позиционирование  */
+
+    .left-indicator {
+      position: absolute;
+      left: 20px;
+      top: 16px;
+      width: 120px;
+      height: 80px;
+      filter: brightness(1.6);
+
+      @media (max-width: 1000px) {
+        width: 80px;
+        height: 60px;
+      }
+    }
+
+    .right-indicator {
+      position: absolute;
+      right: 0;
+      top: -5px;
+      width: 200px;
+      /* height: 120px; */
+
+      @media (max-width: 1000px) {
+        width: 160px;
+        /* height: 80px; */
+      }
+    }
+
+    .bottom-center-indicator {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      /* margin-bottom: 40px; */
+
+      @media (max-width: 1000px) {
+        width: 400px;
+        margin-bottom: 20px;
+      }
+      /* padding-left: 100px; */
+      /* padding-right: 100px; */
+      /* height: 100px; */
+      /* background-color: red; */
+    }
+
+    .content-overlay {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      width: 100%;
+    }
+  </style>
+</html>
